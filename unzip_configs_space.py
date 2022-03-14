@@ -11,10 +11,8 @@ import datetime
 import gzip
 import shutil
 configs = listdir("configs/")
-dt = datetime.datetime.now()
 for config in configs:
     with gzip.open("configs/"+config,"rb") as gzip_ref:
         with open("tempdir/"+(config).replace(".gz",''), "wb") as gzip_out:
             shutil.copyfileobj(gzip_ref, gzip_out)
-
 #End--
